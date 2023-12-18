@@ -1,18 +1,26 @@
+// Importaciones necesarias
 import 'package:flutter/material.dart';
 import 'package:food_recipe/Res/Components/Routs/app_route_name.dart';
 import 'package:food_recipe/View/Pages/get_started_screen.dart';
 import 'package:food_recipe/View/Pages/home_screen.dart';
 
+// Clase que gestiona la generación de rutas para la aplicación.
 class Routes {
+  // Función estática que genera y devuelve la ruta correspondiente según la configuración proporcionada.
   static Route<dynamic> generateRoute(RouteSettings settings) {
-    // ignore: unused_local_variable
+    // Argumentos de la ruta (no utilizados en este ejemplo).
     final argume = settings.arguments;
+
+    // Switch para determinar la ruta actual y devolver la pantalla correspondiente.
     switch (settings.name) {
       case AppRouteName.getStarted:
+        // Retorna una ruta que muestra la pantalla GetStartedScreen.
         return MaterialPageRoute(builder: (BuildContext) => GetStartedScreen());
       case AppRouteName.home:
+        // Retorna una ruta que muestra la pantalla HomeScreen.
         return MaterialPageRoute(builder: (BuildContext) => HomeScreen());
       default:
+        // Si la ruta no coincide con ninguna de las anteriores, por defecto muestra la pantalla GetStartedScreen.
         return MaterialPageRoute(builder: (_) {
           return GetStartedScreen();
         });

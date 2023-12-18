@@ -1,3 +1,4 @@
+// Importaciones necesarias para el archivo
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:food_recipe/Modle/recipe_model.dart';
@@ -6,13 +7,14 @@ import 'package:food_recipe/Res/Components/app_color.dart';
 import 'package:food_recipe/View/Pages/Details_Screen.dart';
 import 'package:food_recipe/View/Pages/Recipelist.dart';
 
+// Clase que representa la pantalla principal (Home)
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 0, 0),
+      backgroundColor: Color.fromARGB(255, 255, 0, 0), // Fondo rojo
       body: SingleChildScrollView(
         padding: EdgeInsets.only(
           top: MediaQuery.of(context).padding.top + 24,
@@ -24,7 +26,7 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Text(
-                "Amantes de la comida",
+                "Amantes de la comida", // Título principal
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge
@@ -34,13 +36,14 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 8),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Text("Que vas a cocinar hoy?",
+              child: Text("¿Qué vas a cocinar hoy?",
                   style: TextStyle(color: Colors.white, fontSize: 15)),
             ),
             const SizedBox(height: 8),
             Center(
               child: TextButton(
                 onPressed: () {
+                  // Navega a la lista de recetas cuando se toca el botón
                   Navigator.of(context).push(MaterialPageRoute(
                       builder: (context) => RecipesListHome()));
                 },
@@ -70,7 +73,6 @@ class HomeScreen extends StatelessWidget {
               margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 8),
               decoration: BoxDecoration(
-                // color: AppColor.primaryColor.withOpacity(0.3),
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Row(
@@ -85,7 +87,7 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
-                        Text("5 nuevas recetas aparecen en tus categorias.",
+                        Text("5 nuevas recetas aparecen en tus categorías.",
                             style:
                                 TextStyle(color: Colors.white, fontSize: 13)),
                       ],
@@ -118,7 +120,7 @@ class HomeScreen extends StatelessWidget {
                   final recipe = trandingRecipes[index];
                   return InkWell(
                       onTap: () {
-                        // Navigate to the details screen when a recipe is tapped
+                        // Navega a la pantalla de detalles cuando se toca una receta
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) =>
                                 DetailScreen(recipe: recipe)));
@@ -132,7 +134,7 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Ultimas recetas agregadas",
+                  Text("Últimas recetas agregadas",
                       style: TextStyle(color: Colors.white, fontSize: 20)),
                 ],
               ),
@@ -151,6 +153,7 @@ class HomeScreen extends StatelessWidget {
                   final recipe = latestRecipes[index];
                   return InkWell(
                     onTap: () {
+                      // Navega a la pantalla de detalles cuando se toca una receta
                       Navigator.of(context).push(MaterialPageRoute(
                           builder: (context) => DetailScreen(recipe: recipe)));
                     },

@@ -4,12 +4,16 @@ class DetailsAlllist extends StatelessWidget {
   final String title;
   final String summary;
 
+  // Constructor que recibe el título y la descripción al inicializar la pantalla de detalles
   DetailsAlllist({Key? key, required this.title, required this.summary})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    // Limpia las etiquetas HTML de la descripción
     String cleanedSummary = _stripHtmlTags(summary);
+    
+    // Divide la descripción en oraciones
     List<String> sentences = cleanedSummary.split('.');
 
     return Scaffold(
@@ -24,15 +28,20 @@ class DetailsAlllist extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Muestra el título con estilo
               Text(
                 'Título: $title',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 16),
+              
+              // Muestra el encabezado de la descripción
               Text(
                 'Descripción:',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
+              
+              // Muestra cada oración de la descripción con viñetas y estilo
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: sentences.asMap().entries.map((entry) {
@@ -45,7 +54,7 @@ class DetailsAlllist extends StatelessWidget {
                       children: [
                         if (index <
                             sentences.length -
-                                1) // Check if it's not the last sentence
+                                1) // Comprueba si no es la última oración
                           Text(
                             '• ',
                             style: TextStyle(
@@ -63,7 +72,7 @@ class DetailsAlllist extends StatelessWidget {
                   );
                 }).toList(),
               ),
-              // Add more details or widgets as needed
+              // Agrega más detalles o widgets según sea necesario
             ],
           ),
         ),
@@ -71,6 +80,7 @@ class DetailsAlllist extends StatelessWidget {
     );
   }
 
+  // Función para eliminar las etiquetas HTML del texto
   String _stripHtmlTags(String htmlString) {
     RegExp exp = RegExp(r"<[^>]*>", multiLine: true, caseSensitive: true);
     return htmlString.replaceAll(exp, '');

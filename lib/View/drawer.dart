@@ -1,5 +1,7 @@
+// Importaciones necesarias para el archivo
 import 'package:flutter/material.dart';
 
+// Clase que representa la página del cajón de navegación
 class DrawerPage extends StatefulWidget { 
   const DrawerPage({super.key});
 
@@ -10,41 +12,45 @@ class DrawerPage extends StatefulWidget {
 class _DrawerPageState extends State<DrawerPage> {
   @override
   Widget build(BuildContext context) {
-    return  Drawer(
-      backgroundColor: Color.fromARGB(255, 180, 193, 196),
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: [
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color(0xff264a52),
+    // Crear y retornar un Drawer con una ListView que contiene elementos del cajón de navegación
+    return Drawer(
+      backgroundColor: Color.fromARGB(255, 180, 193, 196), // Color de fondo del cajón de navegación
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          // Encabezado del cajón de navegación
+          DrawerHeader(
+            decoration: BoxDecoration(
+              color: Color(0xff264a52), // Color de fondo del encabezado
+            ),
+            child: Text(
+              'Drawer Header',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
               ),
-              child: Text(
-                'Drawer Header',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
-              ),
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Settings'),
-              onTap: () {
-                // Add logic for handling Settings
-                Navigator.pop(context); // Close the drawer
-              },
-            ),
-            ListTile(
-              leading: Icon(Icons.exit_to_app),
-              title: Text('Logout'),
-              onTap: () {
-                // Add logic for handling Logout
-                Navigator.pop(context); // Close the drawer
-              },
-            ),
-          ],
-        ),
-      );
+          ),
+          // Elemento de configuración en el cajón de navegación
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text('Settings'),
+            onTap: () {
+              // Lógica para manejar la configuración
+              Navigator.pop(context); // Cerrar el cajón de navegación
+            },
+          ),
+          // Elemento de cierre de sesión en el cajón de navegación
+          ListTile(
+            leading: Icon(Icons.exit_to_app),
+            title: Text('Logout'),
+            onTap: () {
+              // Lógica para manejar el cierre de sesión
+              Navigator.pop(context); // Cerrar el cajón de navegación
+            },
+          ),
+        ],
+      ),
+    );
   }
 }
