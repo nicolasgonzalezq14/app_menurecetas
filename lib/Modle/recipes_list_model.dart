@@ -3,27 +3,22 @@ class Recipes_List {
   // Propiedades de la receta.
   final String name;
   final String images;
-  final double rating;
   final String summary;
-  final String totalTime;
 
   // Constructor que inicializa las propiedades requeridas.
   Recipes_List({
     required this.name,
     required this.images,
-    required this.rating,
     required this.summary,
-    required this.totalTime,
   });
 
   // Constructor de fábrica que crea una instancia de Recipes_List a partir de un mapa JSON.
   factory Recipes_List.fromJson(dynamic json) {
     return Recipes_List(
       name: json['name'] as String? ?? 'Unknown Name',
-      images: (json['images']?[0]?['hostedLargeUrl'] as String?) ?? 'Default Image URL',
-      rating: (json['rating'] as double?) ?? 0.0,
+      images: (json['images']?[0]?['hostedLargeUrl'] as String?) ??
+          'Default Image URL',
       summary: json['summary'] as String? ?? 'Unknown Name',
-      totalTime: json['totalTime'] as String? ?? 'Unknown Time',
     );
   }
 
@@ -37,6 +32,6 @@ class Recipes_List {
   // Sobrescribe el método toString para proporcionar una representación en cadena de la instancia.
   @override
   String toString() {
-    return 'Recipes_List {name: $name, images: $images, rating: $rating, totalTime: $totalTime}';
+    return 'Recipes_List {name: $name, images: $images}';
   }
 }

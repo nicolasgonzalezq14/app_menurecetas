@@ -68,6 +68,7 @@ class _RecipesListHomeState extends State<RecipesListHome> {
                 final title = recipe['title'] as String?;
                 final summary = recipe['summary'] as String?;
                 final thumbnailUrl = recipe['image'] as String?;
+                final instructions = recipe['instructions'] as String?;
 
                 return InkWell(
                   onTap: () {
@@ -76,6 +77,7 @@ class _RecipesListHomeState extends State<RecipesListHome> {
                         builder: (context) => DetailsAlllist(
                           title: title ?? 'No Title',
                           summary: summary ?? 'No Summary',
+                          instructions: instructions ?? 'No instructions'
                         ),
                       ),
                     );
