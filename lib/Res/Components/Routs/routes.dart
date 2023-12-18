@@ -9,6 +9,7 @@ class Routes {
   // Función estática que genera y devuelve la ruta correspondiente según la configuración proporcionada.
   static Route<dynamic> generateRoute(RouteSettings settings) {
     // Argumentos de la ruta (no utilizados en este ejemplo).
+    // ignore: unused_local_variable
     final argume = settings.arguments;
 
     // Switch para determinar la ruta actual y devolver la pantalla correspondiente.

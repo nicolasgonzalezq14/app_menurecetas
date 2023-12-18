@@ -42,6 +42,7 @@ class _RecipesListHomeState extends State<RecipesListHome> {
           IconButton(
             icon: Icon(Icons.search),
             onPressed: () async {
+              // ignore: unused_local_variable
               final result = await showSearch(
                 context: context,
                 delegate: RecipeSearchDelegate(_recipes),

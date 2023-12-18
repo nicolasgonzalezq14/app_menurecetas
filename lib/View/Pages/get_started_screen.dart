@@ -15,7 +15,7 @@ class GetStartedScreen extends StatelessWidget {
       body: Stack(
         children: [
           const Image(
-            image: AssetImage("assets/cook.jpeg"), // Imagen de fondo
+            image: AssetImage("assets/fondopantalla.jpg"), // Imagen de fondo
           ),
           Center(
               child: FadeInUp(
@@ -116,15 +116,6 @@ class Square extends StatelessWidget {
           colors: <Color>[Color(0xffffffff), Color(0x00f0d9d9)],
           stops: <double>[0, 1],
         ),
-      ),
-      child: Row(
-        children: [
-          Expanded(
-            child: Text(
-                "          !Bienvenido¡", // Texto de bienvenida en el cuadrado
-                style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold)),
-          ),
-        ],
       ),
     );
   }
