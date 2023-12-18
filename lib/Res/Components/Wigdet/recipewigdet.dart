@@ -1,15 +1,21 @@
+// Importaciones necesarias
 import 'package:flutter/material.dart';
 import 'package:food_recipe/View/Pages/Details0fallrecipes.dart';
 
+// Widget que representa una tarjeta de receta
 class RecipeCard extends StatelessWidget {
   final String title;
   final String thumbnailUrl;
+
+  // Constructor que recibe el título y la URL de la imagen en miniatura
   RecipeCard({
     required this.title,
     required this.thumbnailUrl,
   });
+
   @override
   Widget build(BuildContext context) {
+    // Devuelve un contenedor que muestra la tarjeta de receta con una imagen de fondo y detalles
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
       width: MediaQuery.of(context).size.width,
@@ -39,6 +45,7 @@ class RecipeCard extends StatelessWidget {
       ),
       child: Stack(
         children: [
+          // Posicionamiento del título en el centro de la tarjeta con un efecto de vidrio borroso
           Align(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.0),
@@ -47,7 +54,7 @@ class RecipeCard extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
-                  color: Colors.white
+                  color: Colors.white,
                 ),
                 overflow: TextOverflow.ellipsis,
                 maxLines: 2,
@@ -56,10 +63,12 @@ class RecipeCard extends StatelessWidget {
             ),
             alignment: Alignment.center,
           ),
+          // Posicionamiento de los detalles en la esquina inferior izquierda con un efecto de vidrio borroso
           Align(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                // Opciones para mostrar estrellas y tiempo de cocción (actualmente desactivadas)
                 // Container(
                 //   padding: EdgeInsets.all(5),
                 //   margin: EdgeInsets.all(10),
@@ -79,7 +88,6 @@ class RecipeCard extends StatelessWidget {
                 //     ],
                 //   ),
                 // ),
-              
                 // Container(
                 //   padding: EdgeInsets.all(5),
                 //   margin: EdgeInsets.all(10),
@@ -99,19 +107,17 @@ class RecipeCard extends StatelessWidget {
                 //     ],
                 //   ),
                 // )
-             
               ],
             ),
             alignment: Alignment.bottomLeft,
           ),
-       
         ],
       ),
     );
   }
 }
 
-
+// Clase que implementa una barra de búsqueda para recetas
 class RecipeSearchDelegate extends SearchDelegate<String> {
   final List<Map<String, dynamic>> recipes;
 
@@ -119,6 +125,7 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
 
   @override
   List<Widget> buildActions(BuildContext context) {
+    // Acciones de la barra de búsqueda (limpiar el campo de búsqueda)
     return [
       IconButton(
         icon: Icon(Icons.clear),
@@ -131,6 +138,7 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
 
   @override
   Widget buildLeading(BuildContext context) {
+    // Botón de retorno atrás en la barra de búsqueda
     return IconButton(
       icon: Icon(Icons.arrow_back),
       onPressed: () {
@@ -141,18 +149,20 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
 
   @override
   Widget buildResults(BuildContext context) {
-    // Implement how to display the search results
-    return Container(); // Placeholder, replace with actual result widget
+    // Implementación de cómo mostrar los resultados de la búsqueda
+    return Container(); // Marcador de posición, reemplazar con un widget de resultado real
   }
 
   @override
   Widget buildSuggestions(BuildContext context) {
+    // Lista de sugerencias basada en la consulta de búsqueda
     final suggestionList = query.isEmpty
         ? []
         : recipes
             .where((recipe) => recipe['title']!.toLowerCase().contains(query.toLowerCase()))
             .toList();
 
+    // Devuelve una lista de resultados sugeridos con función de navegación al seleccionar un elemento
     return ListView.builder(
       itemCount: suggestionList.length,
       itemBuilder: (context, index) {
@@ -176,4 +186,3 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
     );
   }
 }
-

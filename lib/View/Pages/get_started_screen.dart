@@ -1,24 +1,26 @@
+// Importaciones necesarias para el archivo
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:food_recipe/Res/Components/Routs/app_route_name.dart';
 import 'package:food_recipe/Res/Components/app_color.dart';
 
+// Clase que representa la pantalla de inicio
 class GetStartedScreen extends StatelessWidget {
   const GetStartedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black, // Fondo negro de la pantalla
       body: Stack(
         children: [
           const Image(
-            image: AssetImage("assets/cook.jpeg"),
+            image: AssetImage("assets/cook.jpeg"), // Imagen de fondo
           ),
           Center(
               child: FadeInUp(
             from: 250,
-            child: Square(),
+            child: Square(), // Widget de la animación FadeInUp
           )),
           Container(
             width: MediaQuery.of(context).size.width,
@@ -50,7 +52,7 @@ class GetStartedScreen extends StatelessWidget {
               children: [
                 const Spacer(),
                 Text(
-                  "Nunca habia sido \ntan facil cocinar!",
+                  "Nunca había sido \ntan fácil cocinar!", // Texto de bienvenida
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium
@@ -58,7 +60,7 @@ class GetStartedScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  "¡Descubre más de 1000 recetas de comida en tus manos y cocínalas fácilmente!",
+                  "¡Descubre más de 1000 recetas de comida en tus manos y cocínalas fácilmente!", // Descripción
                   style: Theme.of(context)
                       .textTheme
                       .bodyMedium
@@ -67,6 +69,7 @@ class GetStartedScreen extends StatelessWidget {
                 const SizedBox(height: 32),
                 GestureDetector(
                   onTap: () {
+                    // Navega a la pantalla principal cuando se toca el botón
                     Navigator.pushReplacementNamed(context, AppRouteName.home);
                   },
                   child: Container(
@@ -77,7 +80,7 @@ class GetStartedScreen extends StatelessWidget {
                     ),
                     alignment: Alignment.center,
                     child: Text(
-                      "Comencemos",
+                      "Comencemos", // Texto del botón
                       style: Theme.of(context)
                           .textTheme
                           .titleMedium
@@ -94,6 +97,7 @@ class GetStartedScreen extends StatelessWidget {
   }
 }
 
+// Widget cuadrado utilizado en la animación
 class Square extends StatelessWidget {
   const Square({Key? key}) : super(key: key);
   @override
@@ -115,7 +119,7 @@ class Square extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Text("          !Bienvenido¡",
+            child: Text("          !Bienvenido¡", // Texto de bienvenida en el cuadrado
                 style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold)),
           ),
         ],

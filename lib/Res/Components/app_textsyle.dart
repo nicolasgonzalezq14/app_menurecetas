@@ -1,10 +1,13 @@
+// Importaciones necesarias para el archivo
 import 'package:flutter/material.dart';
 import 'package:food_recipe/Res/Components/app_color.dart';
 
-
+// Clase que define estilos de texto utilizados en la aplicación
 class AppTextStyle {
+  // Instancia única de la clase
   static AppTextStyle instance = AppTextStyle();
 
+  // Estilos de texto con diferentes tamaños y estilos
   TextStyle displayLarge = TextStyle(
     color: AppColor.blackGrey,
     fontSize: 57,
@@ -74,75 +77,76 @@ class AppTextStyle {
     color: AppColor.blackGrey,
     fontSize: 12,
   );
-}
 
-Widget textThemeSample(BuildContext context) {
-  return Center(
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          "displayLarge",
-          style: Theme.of(context).textTheme.displayLarge,
-        ),
-        Text(
-          "displayMedium",
-          style: Theme.of(context).textTheme.displayMedium,
-        ),
-        Text(
-          "displaySmall",
-          style: Theme.of(context).textTheme.displaySmall,
-        ),
-        Text(
-          "headlineLarge",
-          style: Theme.of(context).textTheme.headlineLarge,
-        ),
-        Text(
-          "headlineMedium",
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
-        Text(
-          "headlineSmall",
-          style: Theme.of(context).textTheme.headlineSmall,
-        ),
-        Text(
-          "titleLarge",
-          style: Theme.of(context).textTheme.titleLarge,
-        ),
-        Text(
-          "titleMedium",
-          style: Theme.of(context).textTheme.titleMedium,
-        ),
-        Text(
-          "titleSmall",
-          style: Theme.of(context).textTheme.titleSmall,
-        ),
-        Text(
-          "labelLarge",
-          style: Theme.of(context).textTheme.labelLarge,
-        ),
-        Text(
-          "labelMedium",
-          style: Theme.of(context).textTheme.labelMedium,
-        ),
-        Text(
-          "labelSmall",
-          style: Theme.of(context).textTheme.labelSmall,
-        ),
-        Text(
-          "bodyLarge",
-          style: Theme.of(context).textTheme.bodyLarge,
-        ),
-        Text(
-          "bodyMedium",
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-        Text(
-          "bodySmall",
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
-      ],
-    ),
-  );
+  // Función para mostrar ejemplos de los estilos de texto
+  Widget textThemeSample(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            "displayLarge",
+            style: Theme.of(context).textTheme.displayLarge,
+          ),
+          Text(
+            "displayMedium",
+            style: Theme.of(context).textTheme.displayMedium,
+          ),
+          Text(
+            "displaySmall",
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
+          Text(
+            "headlineLarge",
+            style: Theme.of(context).textTheme.headlineLarge,
+          ),
+          Text(
+            "headlineMedium",
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+          Text(
+            "headlineSmall",
+            style: Theme.of(context).textTheme.headlineSmall,
+          ),
+          Text(
+            "titleLarge",
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          Text(
+            "titleMedium",
+            style: Theme.of(context).textTheme.titleMedium,
+          ),
+          Text(
+            "titleSmall",
+            style: Theme.of(context).textTheme.titleSmall,
+          ),
+          Text(
+            "labelLarge",
+            style: Theme.of(context).textTheme.labelLarge,
+          ),
+          Text(
+            "labelMedium",
+            style: Theme.of(context).textTheme.labelMedium,
+          ),
+          Text(
+            "labelSmall",
+            style: Theme.of(context).textTheme.labelSmall,
+          ),
+          Text(
+            "bodyLarge",
+            style: Theme.of(context).textTheme.bodyLarge,
+          ),
+          Text(
+            "bodyMedium",
+            style: Theme.of(context).textTheme.bodyMedium,
+          ),
+          Text(
+            "bodySmall",
+            style: Theme.of(context).textTheme.bodySmall,
+          ),
+        ],
+      ),
+    );
+  }
 }
