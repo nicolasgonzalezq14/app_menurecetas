@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_menurecetas/Res/Components/Routs/app_route_name.dart';
 import 'package:app_menurecetas/View/Pages/get_started_screen.dart';
-import 'package:app_menurecetas/View/Pages/home_screen.dart';
 
 // Clase que gestiona la generación de rutas para la aplicación.
 class Routes {
@@ -17,9 +16,6 @@ class Routes {
       case AppRouteName.getStarted:
         // Retorna una ruta que muestra la pantalla GetStartedScreen.
         return MaterialPageRoute(builder: (BuildContext) => GetStartedScreen());
-      case AppRouteName.home:
-        // Retorna una ruta que muestra la pantalla HomeScreen.
-        return MaterialPageRoute(builder: (BuildContext) => HomeScreen());
       default:
         // Si la ruta no coincide con ninguna de las anteriores, por defecto muestra la pantalla GetStartedScreen.
         return MaterialPageRoute(builder: (_) {
