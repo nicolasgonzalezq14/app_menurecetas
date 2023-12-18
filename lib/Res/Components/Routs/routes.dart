@@ -1,8 +1,8 @@
 // Importaciones necesarias
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Res/Components/Routs/app_route_name.dart';
-import 'package:food_recipe/View/Pages/get_started_screen.dart';
-import 'package:food_recipe/View/Pages/home_screen.dart';
+import 'package:app_menurecetas/Res/Components/Routs/app_route_name.dart';
+import 'package:app_menurecetas/View/Pages/get_started_screen.dart';
+import 'package:app_menurecetas/View/Pages/home_screen.dart';
 
 // Clase que gestiona la generación de rutas para la aplicación.
 class Routes {

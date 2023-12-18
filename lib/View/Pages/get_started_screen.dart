@@ -1,8 +1,8 @@
 // Importaciones necesarias para el archivo
 import 'package:animate_do/animate_do.dart';
+import 'package:app_menurecetas/View/Pages/Recipelist.dart';
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Res/Components/Routs/app_route_name.dart';
-import 'package:food_recipe/Res/Components/app_color.dart';
+import 'package:app_menurecetas/Res/Components/app_color.dart';
 
 // Clase que representa la pantalla de inicio
 class GetStartedScreen extends StatelessWidget {
@@ -69,8 +69,9 @@ class GetStartedScreen extends StatelessWidget {
                 const SizedBox(height: 32),
                 GestureDetector(
                   onTap: () {
-                    // Navega a la pantalla principal cuando se toca el botón
-                    Navigator.pushReplacementNamed(context, AppRouteName.home);
+                    // Navega a la lista de recetas cuando se toca el botón
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => RecipesListHome()));
                   },
                   child: Container(
                     height: 66,
@@ -119,7 +120,8 @@ class Square extends StatelessWidget {
       child: Row(
         children: [
           Expanded(
-            child: Text("          !Bienvenido¡", // Texto de bienvenida en el cuadrado
+            child: Text(
+                "          !Bienvenido¡", // Texto de bienvenida en el cuadrado
                 style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold)),
           ),
         ],

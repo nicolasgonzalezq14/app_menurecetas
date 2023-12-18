@@ -1,9 +1,9 @@
 // Importaciones necesarias para el archivo
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Modle/recipesApi.dart';
-import 'package:food_recipe/Res/Components/Wigdet/Shimmer/shimmerwidget.dart';
-import 'package:food_recipe/Res/Components/Wigdet/recipewigdet.dart';
-import 'package:food_recipe/View/Pages/Details0fallrecipes.dart';
+import 'package:app_menurecetas/Modle/recipesApi.dart';
+import 'package:app_menurecetas/Res/Components/Wigdet/Shimmer/shimmerwidget.dart';
+import 'package:app_menurecetas/Res/Components/Wigdet/recipewigdet.dart';
+import 'package:app_menurecetas/View/Pages/Details0fallrecipes.dart';
 
 // Clase que representa la lista de recetas en la pantalla principal
 class RecipesListHome extends StatefulWidget {

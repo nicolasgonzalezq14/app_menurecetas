@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Res/Components/app_color.dart';
+import 'package:app_menurecetas/Res/Components/app_color.dart';
 
 import 'app_textsyle.dart';
 

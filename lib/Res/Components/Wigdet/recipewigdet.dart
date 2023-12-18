@@ -1,6 +1,6 @@
 // Importaciones necesarias
 import 'package:flutter/material.dart';
-import 'package:food_recipe/View/Pages/Details0fallrecipes.dart';
+import 'package:app_menurecetas/View/Pages/Details0fallrecipes.dart';
 
 // Widget que representa una tarjeta de receta
 class RecipeCard extends StatelessWidget {

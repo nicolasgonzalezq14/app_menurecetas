@@ -1,6 +1,6 @@
 // Importaciones necesarias
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Res/Components/Wigdet/Shimmer/shimmerwidget.dart';
+import 'package:app_menurecetas/Res/Components/Wigdet/Shimmer/shimmerwidget.dart';
 
 // Página que muestra un ListView con elementos de Shimmer
 class ShimmerPage extends StatefulWidget {

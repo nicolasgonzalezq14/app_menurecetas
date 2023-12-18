@@ -1,7 +1,7 @@
 // Importaciones necesarias para el archivo
 import 'package:flutter/material.dart';
-import 'package:food_recipe/View/drawer.dart';
-import 'package:food_recipe/View/ui.dart';
+import 'package:app_menurecetas/View/drawer.dart';
+import 'package:app_menurecetas/View/ui.dart';
 
 // Clase que representa la página del panel de administración
 class AddminPage extends StatefulWidget {

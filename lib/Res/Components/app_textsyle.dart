@@ -1,6 +1,6 @@
 // Importaciones necesarias para el archivo
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Res/Components/app_color.dart';
+import 'package:app_menurecetas/Res/Components/app_color.dart';
 
 // Clase que define estilos de texto utilizados en la aplicación
 class AppTextStyle {

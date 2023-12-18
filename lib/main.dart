@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 
 // Importa los archivos necesarios para las rutas y nombres de ruta de la aplicación.
-import 'package:food_recipe/Res/Components/Routs/app_route_name.dart';
-import 'package:food_recipe/Res/Components/Routs/routes.dart';
+import 'package:app_menurecetas/Res/Components/Routs/app_route_name.dart';
+import 'package:app_menurecetas/Res/Components/Routs/routes.dart';
 
 // Importa el tema de la aplicación.
-import 'package:food_recipe/Res/Components/app_theme.dart';
+import 'package:app_menurecetas/Res/Components/app_theme.dart';
 
 // Función principal que se ejecuta al iniciar la aplicación.
 void main() {

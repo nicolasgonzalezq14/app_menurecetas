@@ -1,11 +1,11 @@
 // Importaciones necesarias para el archivo
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Modle/recipe_model.dart';
-import 'package:food_recipe/Res/Components/Wigdet/recipe_item.dart';
-import 'package:food_recipe/Res/Components/app_color.dart';
-import 'package:food_recipe/View/Pages/Details_Screen.dart';
-import 'package:food_recipe/View/Pages/Recipelist.dart';
+import 'package:app_menurecetas/Modle/recipe_model.dart';
+import 'package:app_menurecetas/Res/Components/Wigdet/recipe_item.dart';
+import 'package:app_menurecetas/Res/Components/app_color.dart';
+import 'package:app_menurecetas/View/Pages/Details_Screen.dart';
+import 'package:app_menurecetas/View/Pages/Recipelist.dart';
 
 // Clase que representa la pantalla principal (Home)
 class HomeScreen extends StatelessWidget {

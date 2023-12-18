@@ -1,8 +1,8 @@
 // Importaciones necesarias
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:food_recipe/Modle/recipe_model.dart';
-import 'package:food_recipe/Res/Components/app_color.dart';
+import 'package:app_menurecetas/Modle/recipe_model.dart';
+import 'package:app_menurecetas/Res/Components/app_color.dart';
 
 // Widget que representa un elemento de la lista de recetas
 class RecipeItem extends StatelessWidget {
