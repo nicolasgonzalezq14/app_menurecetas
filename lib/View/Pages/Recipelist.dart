@@ -33,10 +33,11 @@ class _RecipesListHomeState extends State<RecipesListHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 235, 183, 43), // Color de fondo
+      backgroundColor: Color(0xff264a52), // Color de fondo
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Color(0x00f0d9d9), // Color de fondo de la barra de aplicación
+        backgroundColor:
+            Color(0x00f0d9d9), // Color de fondo de la barra de aplicación
         title: Text('Recetas de comida'), // Título de la barra de aplicación
         actions: [
           IconButton(
@@ -57,7 +58,8 @@ class _RecipesListHomeState extends State<RecipesListHome> {
               itemCount: 1000,
               itemBuilder: (context, index) {
                 return ListTile(
-                  title: ShimmerWidget.rectangular(height: 200), // Efecto Shimmer para indicar carga
+                  title: ShimmerWidget.rectangular(
+                      height: 200), // Efecto Shimmer para indicar carga
                 );
               },
             )
@@ -68,8 +70,21 @@ class _RecipesListHomeState extends State<RecipesListHome> {
                 final title = recipe['title'] as String?;
                 final summary = recipe['summary'] as String?;
                 final thumbnailUrl = recipe['image'] as String?;
-                final instructions = recipe['instructions'] as String?;
+                final instructions = recipe['instructions']
+                    as String?; // Instrucciones de la receta
+                final List<String> extendedIngredients = [];
 
+                for (var i = 0; i < recipe['extendedIngredients'].length; i++) {
+                  if (recipe['extendedIngredients'][i]['original'] != null) {
+                    extendedIngredients.add(
+                        recipe['extendedIngredients'][i]['original'] as String);
+                  }
+                }
+
+                if (extendedIngredients.isEmpty) {
+                  extendedIngredients.add('No Ingredients');
+                }
+                print(extendedIngredients);
                 return InkWell(
                   onTap: () {
                     Navigator.of(context).push(
@@ -77,7 +92,8 @@ class _RecipesListHomeState extends State<RecipesListHome> {
                         builder: (context) => DetailsAlllist(
                           title: title ?? 'No Title',
                           summary: summary ?? 'No Summary',
-                          instructions: instructions ?? 'No instructions'
+                          instructions: instructions ?? 'No Instructions',
+                          extendedIngredients: extendedIngredients,
                         ),
                       ),
                     );

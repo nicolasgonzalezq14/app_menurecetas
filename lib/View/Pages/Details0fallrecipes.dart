@@ -4,29 +4,32 @@ class DetailsAlllist extends StatelessWidget {
   final String title;
   final String summary;
   final String instructions;
+  final List<String> extendedIngredients;
 
-  // Constructor que recibe el título y la descripción al inicializar la pantalla de detalles
+  // Constructor que recibe el título, la descripción y las instrucciones al inicializar la pantalla de detalles
   DetailsAlllist(
       {Key? key,
       required this.title,
       required this.summary,
-      required this.instructions})
+      required this.instructions,
+      required this.extendedIngredients})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // Limpia las etiquetas HTML de la descripción
+    // Limpia las etiquetas HTML de la descripción e instrucciones
     String cleanedSummary = _stripHtmlTags(summary);
     String cleanedInstructions = _stripHtmlTags(instructions);
 
     // Divide la descripción en oraciones
     List<String> sentences = cleanedSummary.split('.');
-
     List<String> sentences2 = cleanedInstructions.split('.');
+
+    // Extraer los nombres de los ingredientes de las instrucciones
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 235, 183, 43),
+        backgroundColor: Color.fromARGB(255, 3, 55, 68),
         centerTitle: true,
         title: Text(title),
       ),
@@ -36,17 +39,22 @@ class DetailsAlllist extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Muestra el título con estilo
               Text(
-                'Título: $title',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                'Ingredientes:',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              SizedBox(height: 16),
+              for (var i = 0; i < extendedIngredients.length; i++)
+                Padding(
+                  padding: const EdgeInsets.all(4.0),
+                  child: Text('• ${extendedIngredients[i]}',
+                      style: TextStyle(
+                        fontSize: 15,
+                      )),
+                ),
 
-              // Muestra el encabezado de la descripción
               Text(
                 'Descripción:',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
 
               // Muestra cada oración de la descripción con viñetas y estilo
@@ -80,10 +88,16 @@ class DetailsAlllist extends StatelessWidget {
                   );
                 }).toList(),
               ),
+
+              // Muestra los nombres de los ingredientes
+
+              // Muestra el encabezado de las instrucciones
               Text(
-                'Intrucciones: ',
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                'Instrucciones:',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
+
+              // Muestra cada oración de las instrucciones con viñetas y estilo
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: sentences2.asMap().entries.map((entry) {
@@ -95,7 +109,7 @@ class DetailsAlllist extends StatelessWidget {
                     child: Row(
                       children: [
                         if (index <
-                            sentences.length -
+                            sentences2.length -
                                 1) // Comprueba si no es la última oración
                           Text(
                             '• ',
@@ -114,6 +128,7 @@ class DetailsAlllist extends StatelessWidget {
                   );
                 }).toList(),
               ),
+
               // Agrega más detalles o widgets según sea necesario
             ],
           ),

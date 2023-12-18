@@ -63,6 +63,54 @@ class RecipeCard extends StatelessWidget {
             ),
             alignment: Alignment.center,
           ),
+          // Posicionamiento de los detalles en la esquina inferior izquierda con un efecto de vidrio borroso
+          Align(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                // Opciones para mostrar estrellas y tiempo de cocción (actualmente desactivadas)
+                // Container(
+                //   padding: EdgeInsets.all(5),
+                //   margin: EdgeInsets.all(10),
+                //   decoration: BoxDecoration(
+                //     color: Colors.black.withOpacity(0.4),
+                //     borderRadius: BorderRadius.circular(15),
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       Icon(
+                //         Icons.star,
+                //         color: Colors.yellow,
+                //         size: 18,
+                //       ),
+                //       SizedBox(width: 7),
+                //       Text(rating),
+                //     ],
+                //   ),
+                // ),
+                // Container(
+                //   padding: EdgeInsets.all(5),
+                //   margin: EdgeInsets.all(10),
+                //   decoration: BoxDecoration(
+                //     color: Colors.black.withOpacity(0.4),
+                //     borderRadius: BorderRadius.circular(15),
+                //   ),
+                //   child: Row(
+                //     children: [
+                //       Icon(
+                //         Icons.schedule,
+                //         color: Colors.yellow,
+                //         size: 18,
+                //       ),
+                //       SizedBox(width: 7),
+                //       Text(cookTime),
+                //     ],
+                //   ),
+                // )
+              ],
+            ),
+            alignment: Alignment.bottomLeft,
+          ),
         ],
       ),
     );
@@ -111,7 +159,8 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
     final suggestionList = query.isEmpty
         ? []
         : recipes
-            .where((recipe) => recipe['title']!.toLowerCase().contains(query.toLowerCase()))
+            .where((recipe) =>
+                recipe['title']!.toLowerCase().contains(query.toLowerCase()))
             .toList();
 
     // Devuelve una lista de resultados sugeridos con función de navegación al seleccionar un elemento
@@ -129,7 +178,10 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
                 builder: (context) => DetailsAlllist(
                   title: title ?? 'No Title',
                   summary: recipe['summary'] as String? ?? 'No Summary',
-                  instructions: recipe['instructions'] as String? ?? 'No instructions',
+                  instructions:
+                      recipe['instructions'] as String? ?? 'No Instructions',
+                  extendedIngredients:
+                      recipe['extendedIngredients'] as List<String>,
                 ),
               ),
             );
