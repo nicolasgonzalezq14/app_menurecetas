@@ -48,7 +48,7 @@ flutter_native_splash:
   web: false
 
 # color: 'FFCC00'
-  background_image: 'assets/fadii.png'
+  background_image: 'assets/fondo.jpg'
   # image: 'assets/calc.png'
 
 

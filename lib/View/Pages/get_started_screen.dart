@@ -1,5 +1,4 @@
 // Importaciones necesarias para el archivo
-import 'package:animate_do/animate_do.dart';
 import 'package:app_menurecetas/View/Pages/Recipelist.dart';
 import 'package:flutter/material.dart';
 import 'package:app_menurecetas/Res/Components/app_color.dart';
@@ -17,11 +16,6 @@ class GetStartedScreen extends StatelessWidget {
           const Image(
             image: AssetImage("assets/fondopantalla.jpg"), // Imagen de fondo
           ),
-          Center(
-              child: FadeInUp(
-            from: 250,
-            child: Square(), // Widget de la animación FadeInUp
-          )),
           Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -98,25 +92,3 @@ class GetStartedScreen extends StatelessWidget {
   }
 }
 
-// Widget cuadrado utilizado en la animación
-class Square extends StatelessWidget {
-  const Square({Key? key}) : super(key: key);
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.all(16),
-      padding: const EdgeInsets.all(16),
-      width: 320,
-      height: 100,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        gradient: LinearGradient(
-          begin: Alignment(0, -1),
-          end: Alignment(0, 1),
-          colors: <Color>[Color(0xffffffff), Color(0x00f0d9d9)],
-          stops: <double>[0, 1],
-        ),
-      ),
-    );
-  }
-}
