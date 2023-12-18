@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       
       // Define el título de la aplicación.
-      title: "Flutter Food Recipe",
+      title: "CocinaConmigo",
 
       // Establece el tema claro de la aplicación.
       theme: AppTheme.light,

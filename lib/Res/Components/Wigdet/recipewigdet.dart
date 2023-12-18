@@ -67,47 +67,6 @@ class RecipeCard extends StatelessWidget {
           Align(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Opciones para mostrar estrellas y tiempo de cocción (actualmente desactivadas)
-                // Container(
-                //   padding: EdgeInsets.all(5),
-                //   margin: EdgeInsets.all(10),
-                //   decoration: BoxDecoration(
-                //     color: Colors.black.withOpacity(0.4),
-                //     borderRadius: BorderRadius.circular(15),
-                //   ),
-                //   child: Row(
-                //     children: [
-                //       Icon(
-                //         Icons.star,
-                //         color: Colors.yellow,
-                //         size: 18,
-                //       ),
-                //       SizedBox(width: 7),
-                //       Text(rating),
-                //     ],
-                //   ),
-                // ),
-                // Container(
-                //   padding: EdgeInsets.all(5),
-                //   margin: EdgeInsets.all(10),
-                //   decoration: BoxDecoration(
-                //     color: Colors.black.withOpacity(0.4),
-                //     borderRadius: BorderRadius.circular(15),
-                //   ),
-                //   child: Row(
-                //     children: [
-                //       Icon(
-                //         Icons.schedule,
-                //         color: Colors.yellow,
-                //         size: 18,
-                //       ),
-                //       SizedBox(width: 7),
-                //       Text(cookTime),
-                //     ],
-                //   ),
-                // )
-              ],
             ),
             alignment: Alignment.bottomLeft,
           ),
@@ -169,10 +128,23 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
       itemBuilder: (context, index) {
         final recipe = suggestionList[index];
         final title = recipe['title'] as String?;
-
         return ListTile(
           title: Text(title ?? 'No Title'),
           onTap: () {
+            List<String> extendedIngredients = [];
+            if (recipe['extendedIngredients'] != null) {
+              for (var i = 0; i < recipe['extendedIngredients'].length; i++) {
+                final ingredient = recipe['extendedIngredients'][i];
+                if (ingredient != null && ingredient['original'] != null) {
+                  extendedIngredients.add(ingredient['original'] as String);
+                }
+              }
+            }
+
+            if (extendedIngredients.isEmpty) {
+              extendedIngredients.add('No Ingredients');
+            }
+
             Navigator.of(context).push(
               MaterialPageRoute(
                 builder: (context) => DetailsAlllist(
@@ -180,8 +152,7 @@ class RecipeSearchDelegate extends SearchDelegate<String> {
                   summary: recipe['summary'] as String? ?? 'No Summary',
                   instructions:
                       recipe['instructions'] as String? ?? 'No Instructions',
-                  extendedIngredients:
-                      recipe['extendedIngredients'] as List<String>,
+                  extendedIngredients: extendedIngredients,
                 ),
               ),
             );
