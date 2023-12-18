@@ -36,17 +36,17 @@ class GetStartedScreen extends StatelessWidget {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(
-              16,
-              MediaQuery.of(context).padding.top + 16,
-              16,
-              MediaQuery.of(context).padding.bottom + 16,
+              20,
+              MediaQuery.of(context).padding.top + 20,
+              20,
+              MediaQuery.of(context).padding.bottom + 20,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const Spacer(),
                 Text(
-                  "Nunca había sido \ntan fácil cocinar!", // Texto de bienvenida
+                  "Nunca había sido tan fácil cocinar!", // Texto de bienvenida
                   style: Theme.of(context)
                       .textTheme
                       .headlineMedium

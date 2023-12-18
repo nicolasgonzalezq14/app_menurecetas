@@ -26,7 +26,7 @@ class DetailsAlllist extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 3, 55, 68),
+        backgroundColor: Color.fromARGB(255, 235, 183, 43),
         centerTitle: true,
         title: Text(title),
       ),
@@ -39,14 +39,14 @@ class DetailsAlllist extends StatelessWidget {
               // Muestra el título con estilo
               Text(
                 'Título: $title',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 16),
 
               // Muestra el encabezado de la descripción
               Text(
                 'Descripción:',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
 
               // Muestra cada oración de la descripción con viñetas y estilo
@@ -82,7 +82,7 @@ class DetailsAlllist extends StatelessWidget {
               ),
               Text(
                 'Intrucciones: ',
-                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

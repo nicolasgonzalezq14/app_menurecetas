@@ -33,7 +33,7 @@ class _RecipesListHomeState extends State<RecipesListHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff264a52), // Color de fondo
+      backgroundColor: Color.fromARGB(255, 235, 183, 43), // Color de fondo
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color(0x00f0d9d9), // Color de fondo de la barra de aplicación
